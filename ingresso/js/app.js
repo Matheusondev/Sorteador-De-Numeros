@@ -2,20 +2,21 @@ let palavraIngresso = quantidadeIngresso > 1 ? 'ingressos' : 'ingresso'
 function comprar(){
   let ingressos = document.getElementById('tipo-ingresso').value
   let quantidadeIngresso = parseInt(document.getElementById('qtd').value)
-  
+  if (quantidadeIngresso <= 0) {
+  alert('Quantidade inválida!')
+ } else{
   if (ingressos == 'pista') { if (confirm('Tem certeza de sua compra?'))
     comprarPista(quantidadeIngresso)
   } else { if (confirm('Tem certeza da sua compra?'))
     if (ingressos == 'superior'){
       comprarCadeiraSuperior(quantidadeIngresso)
     } else { 
-      if (confirm('Tem certeza de sua compra?')){
+      if (confirm('Tem certeza de sua compra?')) 
       if (ingressos == 'inferior') {
         comprarCadeiraInferior(quantidadeIngresso)}
-      }
     }
   }
- 
+}
 }
 
 function comprarPista(quantidadeIngresso) {
