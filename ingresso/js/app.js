@@ -3,14 +3,15 @@ function comprar(){
   let ingressos = document.getElementById('tipo-ingresso').value
   let quantidadeIngresso = parseInt(document.getElementById('qtd').value)
   
-  if (ingressos == 'pista') {
+  if (ingressos == 'pista') { if (confirm('Tem certeza de sua compra?'))
     comprarPista(quantidadeIngresso)
-  } else {
+  } else { if (confirm('Tem certeza da sua compra?'))
     if (ingressos == 'superior'){
       comprarCadeiraSuperior(quantidadeIngresso)
-    } else {
+    } else { 
+      if (confirm('Tem certeza de sua compra?')){
       if (ingressos == 'inferior') {
-        comprarCadeiraInferior(quantidadeIngresso)
+        comprarCadeiraInferior(quantidadeIngresso)}
       }
     }
   }
